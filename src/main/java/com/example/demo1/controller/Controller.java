@@ -61,6 +61,7 @@ public class Controller {
 	public List<Employee> deleteMethod(@PathVariable int id) {
 		list.set(id-1, null);
 		return list;
+		
 	}
 
 }
