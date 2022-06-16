@@ -45,17 +45,15 @@ public class Controller {
 	
 	@PutMapping("/")
 	public List<Employee> putMethod(@RequestBody Employee e){
-		Employee emp=null;
+		
 		for(int i=0; i<list.size(); i++) {
 			if(list.get(i).getId()==e.getId()) {
-				e=list.get(i);
+				list.set(i, e);
+				return list;
 			}
 		}
-		if(emp==null) 
-			list.add(e);
-		else
-			emp=e;
 		
+		list.add(e);
 		return list;
 	}
 	
